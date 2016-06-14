@@ -10,6 +10,16 @@
 
 @interface ViewController : UIViewController
 
-
+{
+    
+   
+    float _firstNumberFloatValue;
+    float _secondNumberFloatValue;
+    float _result;
+    
+    
+    
+    
+}
 @end
 
