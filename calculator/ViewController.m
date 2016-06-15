@@ -27,18 +27,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    myCalculator = [[Calculator alloc] init];
+    
+    
       _resultLabel.text = @" ";
 
 }
 
-// NSLog(@"%@", firstNumber);
+
 
 -(IBAction) addButtonPressed {
     
     _firstNumberFloatValue = [self.firstNumberTextField.text floatValue];
     _secondNumberFloatValue = [self.secondNumberTextField.text floatValue];
     
-    _result = [self addOperation:_firstNumberFloatValue  secondNumberFloatValue:_secondNumberFloatValue];
+    
+   // _result = [self addOperation:_firstNumberFloatValue  secondNumberFloatValue:_secondNumberFloatValue];
+    _result = [myCalculator addOperation:_firstNumberFloatValue secondNumberFloatValue:_secondNumberFloatValue];
     NSString *resultString = [NSString stringWithFormat:@"%f",_result];
     self.resultLabel.text = resultString;
     
@@ -49,7 +54,7 @@
     _firstNumberFloatValue = [self.firstNumberTextField.text floatValue];
     _secondNumberFloatValue = [self.secondNumberTextField.text floatValue];
     
-    _result = [self substractOperation:_firstNumberFloatValue  secondNumberFloatValue:_secondNumberFloatValue];
+    _result = [myCalculator substractOperation:_firstNumberFloatValue secondNumberFloatValue: _secondNumberFloatValue];
     NSString *resultString = [NSString stringWithFormat:@"%f",_result];
     self.resultLabel.text = resultString;
     
@@ -61,7 +66,7 @@
     _firstNumberFloatValue = [self.firstNumberTextField.text floatValue];
     _secondNumberFloatValue = [self.secondNumberTextField.text floatValue];
     
-    _result = [self MultiplyOperation:_firstNumberFloatValue  secondNumberFloatValue:_secondNumberFloatValue];
+      _result = [myCalculator multiplyOperation:_firstNumberFloatValue secondNumberFloatValue: _secondNumberFloatValue];
     NSString *resultString = [NSString stringWithFormat:@"%f",_result];
     self.resultLabel.text = resultString;
     
@@ -73,7 +78,7 @@
     _firstNumberFloatValue = [self.firstNumberTextField.text floatValue];
     _secondNumberFloatValue = [self.secondNumberTextField.text floatValue];
     
-    _result = [self DivideOperation:_firstNumberFloatValue  secondNumberFloatValue:_secondNumberFloatValue];
+      _result = [myCalculator divideOperation:_firstNumberFloatValue secondNumberFloatValue: _secondNumberFloatValue];
     NSString *resultString = [NSString stringWithFormat:@"%f",_result];
     self.resultLabel.text = resultString;
     
@@ -81,30 +86,6 @@
     
 }
 
-
--(float) addOperation :(float) number1 secondNumberFloatValue:(float) number2 {
-    
-    return  number1 + number2;
-    
-}
-
--(float) substractOperation :(float) number1 secondNumberFloatValue:(float) number2 {
-    
-    return  number1-number2;
-    
-}
-
--(float) MultiplyOperation :(float) number1 secondNumberFloatValue:(float) number2 {
-    
-    return  number1*number2;
-    
-}
-
--(float) DivideOperation :(float) number1 secondNumberFloatValue:(float) number2 {
-    
-    return  number1/number2;
-    
-}
 
 
 
